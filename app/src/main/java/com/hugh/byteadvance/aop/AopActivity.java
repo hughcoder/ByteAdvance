@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.hugh.byteadvance.R;
+import com.hugh.byteadvance.aop.pointcut.CustomPointCut;
 
 import androidx.annotation.Nullable;
 
@@ -22,5 +23,13 @@ public class AopActivity extends Activity {
         AopEntity.innerB innerB = new AopEntity.innerB();
         innerB.setName("qqqqqqq");
         Log.e("aaa", "getName-----" + innerB.getName());
+
+        customMethod();
     }
+
+    @CustomPointCut(permissionName = {"PHONE", "STATUS"})
+    public void customMethod(){
+        Toast.makeText(this,"customMethod call",Toast.LENGTH_LONG).show();
+    }
+
 }
