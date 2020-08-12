@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hugh.byteadvance.aop.AopActivity;
+import com.hugh.byteadvance.binder.ClientActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Activity mActivity;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mActivity = this;
         mBtnAop = findViewById(R.id.go_to_aop);
         mBtnAop.setOnClickListener(this);
+        findViewById(R.id.go_to_aidl).setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +31,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.go_to_aop:
                 startActivity(new Intent(mActivity, AopActivity.class));
                 break;
+            case R.id.go_to_aidl:
+                startActivity(new Intent(mActivity, ClientActivity.class));
+                break;
         }
     }
+
+
+
+
 }
