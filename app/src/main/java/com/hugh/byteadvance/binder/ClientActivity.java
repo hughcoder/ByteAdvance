@@ -9,6 +9,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,17 +21,84 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * Created by chenyw on 2020/8/12.
  */
-public class ClientActivity extends AppCompatActivity   {
+public class ClientActivity extends AppCompatActivity {
     private static final String TAG = "aaa";
     private IRemoteService mRemoteService;
     private boolean mIsBound;
     private TextView mCallBackTv;
+    private Button mBtnRegister;
+    private Button mBtnOperate;
+    private TextView mTvResult;
+    private TextView mBtnUnRegister;
+
+    private ICompletedListener completedListener = new ICompletedListener.Stub() {
+        @Override
+        public void onOperationCompleted(final MyData result) throws RemoteException {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mTvResult.setText("运算结果： 加法：" + result.getData1() + "------运算结果: 乘法：" + result.getData2());
+                }
+            });
+        }
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_binder);
         mCallBackTv = (TextView) findViewById(R.id.tv_callback);
+        mTvResult = findViewById(R.id.tv_operate_result);
+        mBtnOperate = findViewById(R.id.btn_operate);
+        mBtnRegister = findViewById(R.id.btn_register);
+        mBtnUnRegister = findViewById(R.id.btn_un_register);
+        mBtnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRemoteService == null) {
+                    Toast.makeText(ClientActivity.this, "请先点击bind,建立链接", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        Toast.makeText(ClientActivity.this, "注册监听成功", Toast.LENGTH_SHORT).show();
+                        mRemoteService.registerListener(completedListener);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+
+        mBtnOperate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRemoteService == null) {
+                    Toast.makeText(ClientActivity.this, "请先点击bind,建立链接", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        Log.e("aaa", "送入数据");
+                        MyData myData = new MyData(2, 88);
+                        mRemoteService.operation(myData);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        mBtnUnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRemoteService == null) {
+                    Toast.makeText(ClientActivity.this, "请先点击bind,建立链接", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        mRemoteService.unregisterListener(completedListener);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
         mCallBackTv.setText("unattached");
     }
 
@@ -64,8 +132,8 @@ public class ClientActivity extends AppCompatActivity   {
     };
 
 
-    public void clickHandler(View view){
-        switch (view.getId()){
+    public void clickHandler(View view) {
+        switch (view.getId()) {
             case R.id.btn_bind:
                 bindRemoteService();
                 break;

@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Parcel;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
 
@@ -17,11 +18,14 @@ public class RemoteService extends Service {
     private static final String TAG = "aaa";
 
     MyData mMyData;
+    //声明
+    private RemoteCallbackList<ICompletedListener> callbackList;
 
     @Override
     public void onCreate() {
         super.onCreate();
         initMyData();
+        callbackList = new RemoteCallbackList<>();
     }
 
 
@@ -51,6 +55,40 @@ public class RemoteService extends Service {
         public MyData getMyData() throws RemoteException {
             Log.i(TAG, "[RemoteService] getMyData()  " + mMyData.toString());
             return mMyData;
+        }
+
+        @Override
+        public void operation(MyData parameter1 ) throws RemoteException {
+            try {
+                Log.e(TAG, "operation 被调用，延时3秒，模拟耗时计算");
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            int param1 = parameter1.getData1();
+            int param2 = parameter1.getData2();
+            MyData result = new MyData(param1 + param2,param1 *param2);
+            //在操作 RemoteCallbackList 前，必须先调用其 beginBroadcast 方法
+            //此外，beginBroadcast 必须和 finishBroadcast配套使用
+            int count = callbackList.beginBroadcast();
+            for (int i = 0; i < count; i++) {
+                ICompletedListener listener = callbackList.getBroadcastItem(i);
+                if (listener != null) {
+                    listener.onOperationCompleted(result);
+                }
+            }
+        }
+
+        @Override
+        public void registerListener(ICompletedListener listener) throws RemoteException {
+            callbackList.register(listener);
+            Log.e(TAG, "registerListener 注册回调成功");
+        }
+
+        @Override
+        public void unregisterListener(ICompletedListener listener) throws RemoteException {
+            callbackList.unregister(listener);
+            Log.e(TAG, "unregisterListener 解除注册回调成功");
         }
 
         //此处可以用于权限拦截

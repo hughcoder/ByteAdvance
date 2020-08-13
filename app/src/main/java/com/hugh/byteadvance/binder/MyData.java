@@ -14,6 +14,11 @@ public class MyData implements Parcelable {
 
     }
 
+    public MyData(int data1,int data2) {
+        this.data1 = data1;
+        this.data2 = data2;
+    }
+
     protected MyData(Parcel in) {
         data1 = in.readInt();
         data2 = in.readInt();

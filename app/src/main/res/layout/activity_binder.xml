@@ -34,4 +34,35 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"/>
 
+    <Button
+        android:id="@+id/btn_register"
+        android:text="去注册下监听"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_bind"/>
+
+    <Button
+        android:id="@+id/btn_operate"
+        android:text="送个Data对象进去操作下"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_bind"
+        android:layout_toRightOf="@+id/btn_register"/>
+    <Button
+        android:id="@+id/btn_un_register"
+        android:text="取消监听"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_bind"
+        android:layout_toRightOf="@+id/btn_operate"/>
+
+    <TextView
+        android:id="@+id/tv_operate_result"
+        android:textColor="@color/colorPrimary"
+        tools:text="结果"
+        android:layout_below="@+id/tv_callback"
+        android:textSize="33sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>
