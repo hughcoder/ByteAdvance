@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.hugh.byteadvance.aop.AopActivity;
 import com.hugh.byteadvance.binder.ClientActivity;
+import com.hugh.byteadvance.databing.DataBindingActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Activity mActivity;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnAop = findViewById(R.id.go_to_aop);
         mBtnAop.setOnClickListener(this);
         findViewById(R.id.go_to_aidl).setOnClickListener(this);
+        findViewById(R.id.go_to_dataBinding).setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.go_to_aidl:
                 startActivity(new Intent(mActivity, ClientActivity.class));
+                break;
+            case R.id.go_to_dataBinding:
+                startActivity(new Intent(mActivity, DataBindingActivity.class));
                 break;
         }
     }
