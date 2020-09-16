@@ -1,4 +1,4 @@
-package com.hugh.byteadvance.databing;
+package com.hugh.byteadvance.jetpack.databing;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import com.hugh.byteadvance.databinding.ActivityDatabingBinding;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ObservableArrayMap;
 
 /**
  * Created by chenyw on 2020/9/16.

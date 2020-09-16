@@ -1,4 +1,4 @@
-package com.hugh.byteadvance.viewmodel.schedulers;
+package com.hugh.byteadvance.common.schedulers;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Scheduler;

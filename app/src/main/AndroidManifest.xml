@@ -25,8 +25,9 @@
             android:exported="true"
             android:process=":remote">
         </service>
-        <activity android:name=".databing.DataBindingActivity"/>
-        <activity android:name=".viewmodel.ViewModelActivity"/>
+        <activity android:name=".jetpack.databing.DataBindingActivity"/>
+        <activity android:name=".jetpack.viewmodel.ViewModelActivity"/>
+        <activity android:name=".jetpack.viewmodel.fragment.MainFragActivity"/>
 
     </application>
 

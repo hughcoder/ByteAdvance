@@ -1,4 +1,4 @@
-package com.hugh.byteadvance.viewmodel;
+package com.hugh.byteadvance.jetpack.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

@@ -1,4 +1,4 @@
-package com.hugh.byteadvance.viewmodel;
+package com.hugh.byteadvance.jetpack.viewmodel;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -27,11 +27,14 @@ public class ViewModelActivity extends AppCompatActivity implements View.OnClick
         // Re-created activities receive the same MyViewModel instance created by the first activity.
         mViewModelBinding = DataBindingUtil.setContentView(this, R.layout.activity_view_model);
         mViewModelBinding.setClick(this);
+        Log.e("aaa","当前主线程111ID:" +Thread.currentThread().getId());
         mModel = new ViewModelProvider(this.getViewModelStore(),
                 ViewModelFactory.getInstance()).get(UserViewModel.class);
         mModel.getUsers().observe(this, users -> {
             // update UI
             Log.e("aaa", "收到了");
+            Log.e("aaa","当前主线程222ID:" +Thread.currentThread().getId());
+            mViewModelBinding.tvAsyncName.setText(users.getFirstName());
         });
         mModel.getCurrentName().observe(this, new Observer<String>() {
             @Override

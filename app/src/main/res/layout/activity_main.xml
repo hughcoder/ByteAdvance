@@ -28,4 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="进入viewmodel"/>
+    <Button
+        android:id="@+id/go_to_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入fragment用viewmodel通信"/>
 </LinearLayout>

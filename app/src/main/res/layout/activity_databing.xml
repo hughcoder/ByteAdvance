@@ -6,7 +6,7 @@
 
         <variable
             name="user"
-            type="com.hugh.byteadvance.databing.UserBean" />
+            type="com.hugh.byteadvance.jetpack.databing.UserBean" />
 
         <variable
             name="click"

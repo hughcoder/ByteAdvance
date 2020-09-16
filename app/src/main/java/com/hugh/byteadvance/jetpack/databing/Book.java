@@ -1,4 +1,4 @@
-package com.hugh.byteadvance.databing;
+package com.hugh.byteadvance.jetpack.databing;
 
 /**
  * Created by chenyw on 2020/9/16.

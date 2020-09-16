@@ -1,11 +1,10 @@
-package com.hugh.byteadvance.viewmodel;
+package com.hugh.byteadvance.jetpack.viewmodel;
 
 import android.util.Log;
 
-import com.hugh.byteadvance.databing.UserBean;
-import com.hugh.byteadvance.viewmodel.schedulers.BaseSchedulerProvider;
+import com.hugh.byteadvance.jetpack.databing.UserBean;
+import com.hugh.byteadvance.common.schedulers.BaseSchedulerProvider;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
@@ -21,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by chenyw on 2020/9/16.
  */
 public class UserViewModel extends ViewModel {
-    private MutableLiveData<List<UserBean>> users;
+    private MutableLiveData<UserBean> users;
     private Disposable mTimeLimitDisposable;
     protected BaseSchedulerProvider mSchedulerProvider;
     private MutableLiveData<String> currentName; //定义String变量
@@ -55,9 +54,9 @@ public class UserViewModel extends ViewModel {
         };
     }
 
-    public LiveData<List<UserBean>> getUsers() {
+    public LiveData<UserBean> getUsers() {
         if (users == null) {
-            users = new MutableLiveData<List<UserBean>>();
+            users = new MutableLiveData<UserBean>();
             loadUsers();
         }
         return users;
@@ -80,10 +79,11 @@ public class UserViewModel extends ViewModel {
                 .subscribe();
     }
 
-    private void getUserDataDone(){
-        Log.e("aaa","getUserDataDone");
-        UserBean userBean = new UserBean("第一个名字","第二个名字");
-
+    private void getUserDataDone() {
+        Log.e("aaa", "getUserDataDone");
+        Log.e("aaa","当前线程ID:" +Thread.currentThread().getId());
+        UserBean userBean = new UserBean("第一个名字", "第二个名字");
+        users.postValue(userBean);
     }
 
     @Override
