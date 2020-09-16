@@ -23,5 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="进入databinding"/>
-
+    <Button
+        android:id="@+id/go_to_view_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入viewmodel"/>
 </LinearLayout>

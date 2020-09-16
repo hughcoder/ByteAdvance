@@ -26,6 +26,7 @@
             android:process=":remote">
         </service>
         <activity android:name=".databing.DataBindingActivity"/>
+        <activity android:name=".viewmodel.ViewModelActivity"/>
 
     </application>
 
