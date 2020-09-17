@@ -97,4 +97,8 @@ dependencies {
 
     //AOP面向切面编程 aspect
     implementation 'org.aspectj:aspectjrt:1.8.13'
+
+    //android 播放器
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.9.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.9.1'
 }

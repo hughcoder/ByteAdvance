@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <com.hugh.byteadvance.dragvideo.DragVideoLayout
+            android:id="@+id/dragVideoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始" />
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停 " />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="终止" />
+    <Button
+        android:id="@+id/btn_start_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放子页面" />
+</LinearLayout>

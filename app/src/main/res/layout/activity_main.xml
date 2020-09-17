@@ -37,5 +37,11 @@
         android:id="@+id/go_to_pic_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="进入画中画"/>
+    <Button
+        android:id="@+id/go_to_drag_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入拖拽Video页面"/>
 </LinearLayout>
