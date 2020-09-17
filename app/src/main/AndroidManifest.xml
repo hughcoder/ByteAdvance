@@ -28,6 +28,7 @@
         <activity android:name=".jetpack.databing.DataBindingActivity"/>
         <activity android:name=".jetpack.viewmodel.ViewModelActivity"/>
         <activity android:name=".jetpack.viewmodel.fragment.MainFragActivity"/>
+        <activity android:name=".dragvideo.DragVideoViewActivity"/>
 
     </application>
 

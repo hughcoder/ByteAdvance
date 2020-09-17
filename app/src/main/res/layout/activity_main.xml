@@ -33,4 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="进入fragment用viewmodel通信"/>
+    <Button
+        android:id="@+id/go_to_pic_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入画中画"/>
 </LinearLayout>
