@@ -7,11 +7,11 @@ public class AopEntity {
     public static class innerB {
         private String name;
 
-        public void setName(String name) {
+        public void setAopName(String name) {
             this.name = name;
         }
 
-        public String getName() {
+        public String getAopName() {
             return name;
         }
     }

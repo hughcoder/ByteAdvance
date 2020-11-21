@@ -16,7 +16,7 @@ import org.aspectj.lang.annotation.Pointcut;
 public class NameAspect {
 
     //PointCut: 切点
-    @Pointcut("call(* setName(String))") //语法需要书写对,*号后面的空格不能少
+    @Pointcut("call(* setAopName(String))") //语法需要书写对,*号后面的空格不能少
     public void setName1() {
 
     }
@@ -32,7 +32,7 @@ public class NameAspect {
         return proceed;
     }
 
-    @Pointcut("call(* getName())")
+    @Pointcut("call(* getAopName())")
     public void getName1() {
 
     }

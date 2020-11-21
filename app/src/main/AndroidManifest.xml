@@ -41,6 +41,7 @@
         <activity android:name=".jetpack.viewmodel.fragment.MainFragActivity"/>
         <activity android:name=".dragvideo.DragVideoViewActivity"/>
         <activity android:name=".dragvideo.videopage.VideoViewActivity"/>
+        <activity android:name=".annotation.AnnoActivity"/>
 
     </application>
 

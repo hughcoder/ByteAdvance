@@ -21,8 +21,8 @@ public class AopActivity extends Activity {
         setContentView(R.layout.activity_aop);
 
         AopEntity.innerB innerB = new AopEntity.innerB();
-        innerB.setName("qqqqqqq");
-        Log.e("aaa", "getName-----" + innerB.getName());
+        innerB.setAopName("qqqqqqq");
+        Log.e("aaa", "getName-----" + innerB.getAopName());
 
         customMethod();
     }
