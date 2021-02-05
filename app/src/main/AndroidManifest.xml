@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -42,6 +43,7 @@
         <activity android:name=".dragvideo.DragVideoViewActivity"/>
         <activity android:name=".dragvideo.videopage.VideoViewActivity"/>
         <activity android:name=".annotation.AnnoActivity"/>
+        <activity android:name=".hook.HookActivity"/>
 
     </application>
 
