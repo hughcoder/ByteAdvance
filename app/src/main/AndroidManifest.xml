@@ -18,6 +18,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".HughApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -30,21 +31,26 @@
         </activity>
 
         <activity android:name=".aop.AopActivity" />
-        <activity android:name=".binder.ClientActivity"/>
+        <activity android:name=".binder.ClientActivity" />
+
         <service
             android:name=".binder.RemoteService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote">
-        </service>
-        <activity android:name=".jetpack.databing.DataBindingActivity"/>
-        <activity android:name=".jetpack.viewmodel.ViewModelActivity"/>
-        <activity android:name=".jetpack.viewmodel.fragment.MainFragActivity"/>
-        <activity android:name=".dragvideo.DragVideoViewActivity"/>
-        <activity android:name=".dragvideo.videopage.VideoViewActivity"/>
-        <activity android:name=".annotation.AnnoActivity"/>
-        <activity android:name=".hook.HookActivity"/>
+            android:process=":remote"></service>
 
+        <activity android:name=".jetpack.databing.DataBindingActivity" />
+        <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
+        <activity android:name=".jetpack.viewmodel.fragment.MainFragActivity" />
+        <activity android:name=".dragvideo.DragVideoViewActivity" />
+        <activity android:name=".dragvideo.videopage.VideoViewActivity" />
+        <activity android:name=".annotation.AnnoActivity" />
+        <activity android:name=".hook.HookActivity" />
+
+        <service android:name=".hook.servicehook.service.MyService" />
+        <activity android:name=".ui.basic.recyclerlist.RecyclerViewActivity"/>
+        <activity android:name=".ui.basic.handler.HandlerActivity"/>
+        <activity android:name=".ui.basic.rxjava2.RxjavaActivity"/>
     </application>
 
 </manifest>

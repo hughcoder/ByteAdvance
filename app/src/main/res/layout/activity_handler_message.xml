@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <Button
+        android:id="@+id/btn_send_message"
+        android:text="发送消息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_send_idle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送idleHandler"/>
+
+    <Button
+        android:id="@+id/btn_send_child_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="子线程测试"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

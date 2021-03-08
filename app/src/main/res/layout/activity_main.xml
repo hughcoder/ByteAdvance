@@ -55,4 +55,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="去hook输入框页面"/>
+    <Button
+        android:id="@+id/go_to_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去列表页面"/>
+    <Button
+        android:id="@+id/go_to_handler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去handler页面"/>
+    <Button
+        android:id="@+id/go_to_rxjava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去rxjava2页面"/>
 </LinearLayout>

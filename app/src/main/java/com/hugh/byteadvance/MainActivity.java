@@ -22,6 +22,9 @@ import com.hugh.byteadvance.hook.HookActivity;
 import com.hugh.byteadvance.jetpack.databing.DataBindingActivity;
 import com.hugh.byteadvance.jetpack.viewmodel.ViewModelActivity;
 import com.hugh.byteadvance.jetpack.viewmodel.fragment.MainFragActivity;
+import com.hugh.byteadvance.ui.basic.handler.HandlerActivity;
+import com.hugh.byteadvance.ui.basic.recyclerlist.RecyclerViewActivity;
+import com.hugh.byteadvance.ui.basic.rxjava2.RxjavaActivity;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnAop.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.e("aaa","hhaahahah");
+                Log.e("aaa", "hhaahahah");
                 return true;
             }
         });
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.go_to_drag_video).setOnClickListener(this);
         findViewById(R.id.go_to_anno).setOnClickListener(this);
         findViewById(R.id.go_to_hook_edittext).setOnClickListener(this);
+        findViewById(R.id.go_to_list).setOnClickListener(this);
+        findViewById(R.id.go_to_handler).setOnClickListener(this);
+        findViewById(R.id.go_to_rxjava).setOnClickListener(this);
         try {
             hookStartActivity();
         } catch (Exception e) {
@@ -114,6 +120,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.go_to_hook_edittext:
                 getApplicationContext().startActivity(new Intent(mActivity, HookActivity.class));
 //                startActivity(new Intent(mActivity, AnnoActivity.class));
+                break;
+            case R.id.go_to_list:
+                getApplicationContext().startActivity(new Intent(mActivity, RecyclerViewActivity.class));
+                break;
+            case R.id.go_to_handler:
+                getApplicationContext().startActivity(new Intent(mActivity, HandlerActivity.class));
+                break;
+            case R.id.go_to_rxjava:
+                getApplicationContext().startActivity(new Intent(mActivity, RxjavaActivity.class));
                 break;
         }
     }
